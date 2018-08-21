@@ -1,0 +1,88 @@
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1280px) {
+	
+	.main {
+		width: 100%;
+		height: auto;
+		margin: 0 auto;
+	}
+	.login {
+		margin-right: 20px;
+	}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+.log p {
+		display: none;
+	}
+.logo, .log {
+		width: 100%;
+		text-align: center;
+	}
+.logo h2 {
+	padding: 60px 0;
+}
+
+.login {
+		width: 150px;
+		height: 50px;
+	}
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+.logo h2 {
+	font: normal 500 24px/35px "RobotoRegular";
+	padding: 30px 0;
+}
+.logo img {
+	height: 35px;
+	width: 35px;
+	margin-left: -50px;
+}
+.login {
+		width: 90px;
+		height: 40px;
+	}
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+
+}
+@media only screen and (max-width : 160px) {
+
+}
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+ /* Large Devices, Wide Screens */
+@media only screen and (min-width : 1280px) {
+
+}

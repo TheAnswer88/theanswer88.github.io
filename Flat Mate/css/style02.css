@@ -1,0 +1,114 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+header {
+	background-image: url(../img/main_photo.jpg);
+	background-size: cover;
+	background-position: top center;
+	background-repeat: no-repeat;
+}
+.main {
+	width: 1280px;
+	margin: 0 auto;
+	border: 1px solid red ;
+}
+.wrapper_logo>div {
+	display: inline-block;
+}
+.logo {
+	width: 50%;
+}
+
+.logo h2 {
+	font: normal 500 40px/50px "RobotoRegular";
+	color: #efefef;
+	padding: 60px 0 60px 85px;
+	position: relative;
+
+}
+.logo img {
+	margin-left: -75px;
+	position: absolute;
+}
+.log {
+	text-align: right;
+	width: 50%;
+}
+.log p {
+	display: inline-block;
+}
+.account {
+	font: italic 500 18px/18px "RobotoThin";
+	color: #c9ced7;
+	margin: 20px;
+}
+.login {
+	font: normal 500 18px/18px "RobotoRegular";
+	color: #cad1db;
+	background-color: #3d4b60;
+	text-transform: uppercase;
+	border: 0;
+	padding: 9px 15px;
+	border-radius: 8px;
+	cursor: pointer;
+}
+.login:hover {
+	background-color: #3D4B3E;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+}
+.login:active {
+	background-color: #57B287;
+}
+.login:focus  {
+	outline: none;
+}
+.read_more {
+	padding: 140px 0 200px; 
+}
+.read_more>div {
+	display: inline-block;
+}
+.read_text {
+	width: 70%;
+}
+.read_text h1 {
+	font: normal 500 50px/50px "RobotoSlab";
+	color: #fff;
+	padding-bottom: 40px;
+}
+.read_text p{
+	font: normal 500 24px/42px "RobotoRegular";
+	color: #c5d2e5;
+	width: 560px;
+	padding-bottom: 50px;
+	letter-spacing: 0.5px;
+}
+.read_img {
+	width: 30%;
+	vertical-align: top;
+}
+.main_button {
+	font: normal 500 34px/34px "RobotoRegular";
+    color: #fff;
+    background-color: #57B287;
+    border: 0;
+    padding: 20px 45px;
+    border-radius: 5px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+}
+.main_button:hover {
+	background-color: #3D4B3E;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+}
+.main_button:active {
+	background-color: #3d4b60;
+}
+.main_button:focus  {
+	outline: none;
+}
+.read_img img {
+	padding-left: 60px;
+}
+
