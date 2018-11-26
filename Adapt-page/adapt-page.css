@@ -95,5 +95,7 @@ body {
 		margin-left: 2%;
 		margin-right: 2%;
 	}
-
+	.header h1 {
+		font-size: 20px;
+	}
 }
