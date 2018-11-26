@@ -88,11 +88,12 @@ body {
 }
 @media all and (max-width: 768px) {
 	.first-news, .second-news, .third-news, .forth-news {
-		width: 100%;
+		width: 96%;
 		float: left;
 	}
 	.all-news, .heading, .footer .container {
-		padding-left: 2%;
-		padding-right: 2%;
+		margin-left: 2%;
+		margin-right: 2%;
 	}
+
 }
