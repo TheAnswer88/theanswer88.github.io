@@ -1,0 +1,42 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+.container {
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+	border: 1px solid red;
+}
+.container:before, .container:after {
+	content: " ";
+	display: table;
+	clear: both;
+}
+.container h1 {
+	text-align: center;
+	padding: 20px 0;
+}
+.row-3 img {
+	display: block;
+	width: 33.33333333%;
+	height: auto;
+	box-sizing: border-box;
+	float: left;
+	padding-left: 0.5%;
+	padding-right: 0.5%;
+	padding-bottom: 1%;
+}
+@media all and (max-width: 768px) {
+	body {
+		overflow-x: hidden;
+	}
+	.row-2 img {
+		width: 50%;
+	}
+}
+@media all and (max-width: 480px) {
+	.row-1 img {
+		width: 100%;
+	}
+}
