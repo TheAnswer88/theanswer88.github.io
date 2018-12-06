@@ -1,0 +1,160 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+.about-wellness {
+	background-color: #00383D;
+}
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    border: 1px solid red; 
+  }
+.about-wellness .row {
+	padding: 10px 10px 10px;
+}
+.container:before,
+.container:after,
+.row:before,
+.row:after {
+  content: " ";
+  display: table;
+}
+.container:after,
+.row:after {
+  clear: both;
+}
+.col-md-2 {
+    float: left;
+    width: 16.66666667%;
+  }
+.col-md-4 {
+    float: left;
+    width: 33.33333333%;
+  }
+.col-md-6 {
+    float: left;
+    width: 50%;
+  }
+.about-wellness__logo img {
+	width: 128px;
+ 	height: 84px;
+}
+.about-wellness__logo, .about-wellness__info {
+	padding-top: 10px;
+}
+.about-wellness__name h1 {
+	margin: 0;
+	padding: 0;
+	text-transform: uppercase;
+	font: 54px/54px ProximaNovaBoldItalic;
+	color: white;
+	padding-top: 10px;
+}
+.about-wellness__name p {
+	font: 18px/18px ProximaNovaBoldItalic;
+	color: white;
+	padding-top: 4px;
+}
+
+.about-wellness__number {
+	float: left;
+	padding-left: 40px;
+	font-style: normal;
+	width: 400px;
+}
+.about-wellness__number span {
+	float: right;
+}
+.about-wellness__number p {
+	font: normal 16px/20px ProximaNovaBoldRegular;
+	color: white;
+}
+.about-wellness__number .map::after {
+	content: url(../img/map.svg);
+	padding-left: 20px;
+	vertical-align: middle;
+}
+.about-wellness__number .smartphone::before {
+	content: url(../img/smartphone.svg);
+	padding-right: 19px;
+	vertical-align: middle;
+}
+.about-wellness__number .handphone::before {
+	content: url(../img/handphone.svg);
+	padding-right: 10px;
+	vertical-align: middle;
+}
+.about-wellness__number .clock::before {
+	content: url(../img/clock.svg);
+	padding-right: 10px;
+	display: inline-block;
+	height: 20px;
+	vertical-align: top;
+}
+.about-wellness__icon {
+	float: right;
+	width: 116px;
+}
+.about-wellness__icon ul {
+	list-style: none;
+}
+.about-wellness__icon ul li a {
+	float: left;
+	margin-right: 10px;
+	height: 32px;
+	width: 32px;
+}
+.about-wellness__icon ul li:last-child a {
+	margin-right: 0;
+}
+.about-wellness__icon .viber {
+	background: url(../img/viber.svg) no-repeat;
+}
+.about-wellness__icon .vkontakte {
+	background: url(../img/vkontakte.svg) no-repeat center center;
+}
+.about-wellness__icon .instagram {
+	background: url(../img/instagram.svg) no-repeat;
+}
+.excerpt {
+	position: relative;
+}
+.excerpt img {
+ 	max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  opacity: 0.85;
+}
+
+.excerpt blockquote {
+	position: absolute;
+	max-width: 1280px;
+  border: 1px solid red;
+  left: 0; right: 0; top: 0; bottom: 0;
+  margin: auto;
+  padding-top: 15%;
+  text-align: right;
+  font: normal 22px/34px ProximaNovaBoldItalic;
+	color: #00383D;
+}
+.excerpt p {
+	padding-right: 50px;
+}
+.excerpt .excerpt-beauty:before {
+	content: url(../img/commas-open.svg);
+	padding-right: 10px;
+}
+.excerpt .excerpt-beauty:after {
+	content: url(../img/commas-close.svg);
+	padding-top: 10px;
+	padding-left: 10px;
+	display: block;
+	float: right;
+}
+.excerpt .author {
+	line-height: 50px;
+	font-size: 24px;
+	text-transform: uppercase;
+}
