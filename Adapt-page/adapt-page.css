@@ -32,18 +32,19 @@ body {
   clear: both;
 }
 .first-news, .second-news, .third-news, .forth-news {
-	width: 23%;
+	width: 23.5%;
+	box-sizing: border-box;
 	float: left;
 }
 .wrap-news {
-	background-color: #F8F8F8;
-	margin-right: 2.66666667%;
+	margin-right: 2%;
 }
 .wrap-news:last-child {
 	margin-right: 0;
 }
 .wrap-news h2, .wrap-news p {
 	text-align: center;
+	background-color: #F8F8F8;
 }
 .wrap-news h2 {
 	padding: 20px;
@@ -98,7 +99,4 @@ body {
 	.header h1 {
 		font-size: 20px;
 	}
-	body {
-	overflow: hidden;
-}
 }
