@@ -1,23 +1,23 @@
-<svg width=600 height=400 xmlns="http://www.w3.org/2000/svg">
-		<ellipse cx=420 cy=285 rx=55 ry=15 fill="#D3D3D3"/>
-		<circle cx=420 cy=200 r=85 fill="#FFD700"/>
-		<circle cx=390 cy=180 r=35 fill="white"/>
-		<circle cx=435 cy=180 r=35 fill="white"/>
-		<circle cx=380 cy=180 r=7 fill="black"/>
-		<circle cx=425 cy=180 r=7 fill="black"/>
-		<ellipse cx=412 cy=245 rx=8 ry=16 fill="#DC143C"/>
-		<ellipse cx=200 cy=285 rx=55 ry=15 fill="#D3D3D3"/>
-		<circle cx=200 cy=200 r=85 fill="#FFA500"/>
-		<circle cx=190 cy=180 r=35 fill="white"/>
-		<circle cx=235 cy=180 r=35 fill="white"/>
-		<circle cx=195 cy=180 r=7 fill="black"/>
-		<circle cx=240 cy=180 r=7 fill="black"/>
-		<ellipse cx=205 cy=245 rx=16 ry=8 fill="#DC143C"/>
-		<circle cx=215 cy=215 r=12 fill="black"/>
-		<ellipse cx=85 cy=220 rx=58 ry=22 fill="#FFA500" transform="rotate (15 85 220)"/>
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+		<ellipse cx="420" cy="285" rx="55" ry="15" fill="#D3D3D3"/>
+		<circle cx="420" cy="200" r="85" fill="#FFD700"/>
+		<circle cx="390" cy="180" r="35" fill="white"/>
+		<circle cx="435" cy="180" r="35" fill="white"/>
+		<circle cx="380" cy="180" r="7" fill="black"/>
+		<circle cx="425" cy="180" r="7" fill="black"/>
+		<ellipse cx="412" cy="245" rx="8" ry="16" fill="#DC143C"/>
+		<ellipse cx="200" cy="285" rx="55" ry="15" fill="#D3D3D3"/>
+		<circle cx="200" cy="200" r="85" fill="#FFA500"/>
+		<circle cx="190" cy="180" r="35" fill="white"/>
+		<circle cx="235" cy="180" r="35" fill="white"/>
+		<circle cx="195" cy="180" r="7" fill="black"/>
+		<circle cx="240" cy="180" r="7" fill="black"/>
+		<ellipse cx="205" cy="245" rx="16" ry="8" fill="#DC143C"/>
+		<circle cx="215" cy="215" r="12" fill="black"/>
+		<ellipse cx="85" cy="220" rx="58" ry="22" fill="#FFA500" transform="rotate (15 85 220)"/>
 		<polygon points="32 205 55,228 65,198" fill="white"/>
 		<polygon points="138,112 136,151 176,124" fill="#FFA500"/>
 		<polygon points="142,118 140,145 170,125" fill="black"/>
 		<polygon points="241,105 216,120 255,140" fill="#FFA500"/>
 		<polygon points="240,110 220,120 250,135" fill="black"/>
-	</svg>
+</svg>
