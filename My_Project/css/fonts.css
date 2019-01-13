@@ -8,5 +8,9 @@
 	src: url(../fonts/proximanovaboldregular-webfont.woff);
 	src: url(../fonts/proximanovaboldregular-webfont.woff2);
 }
-
+@font-face {
+	font-family: AvenirNextCyrThin;
+	src: url(../fonts/avenirnextcyr-thin-webfont.woff);
+	src: url(../fonts/avenirnextcyr-thin-webfont.woff2);
+}
 
