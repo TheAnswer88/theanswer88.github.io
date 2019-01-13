@@ -1,0 +1,182 @@
+/*==========  Desktop First Method  ==========*/
+@media only screen and (max-width : 1560px) {
+	.dark-theme .container {
+		padding: 10px 20px;
+	}
+	.dark-theme .menu-wrap {
+		padding: 0px 20px;
+	}
+	.quote {
+		height: 600px;
+	}
+}
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1280px) {
+	.col-sm-1, .col-sm-2, .col-sm-5, .col-sm-6, .col-sm-7 {
+		float: left;
+	}
+	.col-sm-1 {
+  width: 8.33333333%;
+  }
+	.col-sm-2 {
+		width: 16.66666667%;
+	}
+	.col-sm-5 {
+		width: 41.66666667%;
+	}
+	.col-sm-6 {
+  width: 50%;
+  }
+	.info__icon {
+		display: none;
+	}
+	.info__icon ul li a {
+		margin-bottom: 5px;
+	}
+	.logo img {
+		min-width: 125px;
+	}
+	.name h1 {
+		font-size: 46px;
+		line-height: 46px;
+	}
+	.quote {
+		height: 450px;
+	}
+}
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+	.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-9, .col-xs-10, .col-xs-12 {
+		float: left;
+	}
+	.col-xs-1 {
+  width: 8.33333333%;
+  }
+	.col-xs-2 {
+		width: 16.66666667%;
+	}
+  .col-xs-3 {
+    width: 25%;
+  }
+  .col-xs-4 {
+    width: 33.33333333%;
+  }
+	.col-xs-5 {
+		width: 41.66666667%;
+	}
+	.col-xs-6 {
+  width: 50%;
+  }
+  .col-xs-9 {
+    width: 75%;
+  }
+  .col-xs-10 {
+    width: 83.33333333%;
+  }
+  .col-xs-12 {
+    width: 100%;
+  }
+  .info p {
+  	display: inline-block;
+  	padding-top: 10px;
+  	padding-right: 20px;
+  }
+  .info p:last-child {
+  	margin-right: 0;
+  }
+	.info .info__map, .info__number span {
+		display: none;
+	}
+	.info .info__number {
+		text-align: center;
+		width: 100%;
+	}
+	.logo {
+		text-align: right;
+	}
+	.name h1, .name p {
+		text-align: center;
+	}
+	.menu a {
+		margin: 0;
+	}
+.quote {
+	height: 350px;
+}
+}
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	.logo img {
+		min-width: 100px;
+	}
+	.logo {
+		text-align: center;
+	}
+	.info .info__number {
+		display: none;
+	}
+	body {
+		overflow-x: hidden;
+	}
+	.cosmetology__photo {
+		width: 49%;
+	}
+	.dark-theme .menu-wrap {
+		padding: 0px;
+	}
+	.menu {
+		min-height: 40px;
+	}
+	.menu li {
+		line-height: 40px;
+		font-size: 14px;
+		width: 50%;
+		float: left;
+	}
+	.menu .menu__price {
+		width: 100%;
+	}
+	.menu .menu__main {
+		display: none;
+	}
+
+.quote {
+	height: 250px;
+}
+
+}
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+	.dark-theme .container {
+		padding: 10px 10px;
+	}
+	.logo img {
+		min-width: 70px;
+	}
+	.name h1 {
+		font-size: 28px;
+		line-height: 28px;
+	}
+	.name p {
+		font-size: 14px;
+		line-height: 14px;
+	}
+	.cosmetology__photo {
+		width: 99%;
+	}
+
+.quote {
+	position: relative;
+	height: 200px;
+	width: 100%;
+}
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+
+.quote {
+	height: 152px;
+}
+
+}

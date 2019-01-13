@@ -1,0 +1,16 @@
+@font-face {
+	font-family: ProximaNovaBoldItalic;
+	src: url(../fonts/proximanovabolditalic-webfont.woff);
+	src: url(../fonts/proximanovabolditalic-webfont.woff2);
+}
+@font-face {
+	font-family: ProximaNovaBoldRegular;
+	src: url(../fonts/proximanovaboldregular-webfont.woff);
+	src: url(../fonts/proximanovaboldregular-webfont.woff2);
+}
+@font-face {
+	font-family: AvenirNextCyrThin;
+	src: url(../fonts/avenirnextcyr-thin-webfont.woff);
+	src: url(../fonts/avenirnextcyr-thin-webfont.woff2);
+}
+
