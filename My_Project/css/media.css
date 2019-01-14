@@ -43,6 +43,20 @@
 	.quote {
 		height: 450px;
 	}
+	.quote blockquote {
+		width: 400px;
+		text-align: right;
+		line-height: 28px;
+	}
+	.service__cosmetic-items h2 {
+		font-size: 30px;
+		line-height: 36px;
+	}
+	.service__cosmetic-items p {
+		font-size: 22px;
+		line-height: 22px;
+		padding-bottom: 30px;
+	}
 }
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
@@ -100,9 +114,38 @@
 	.menu a {
 		margin: 0;
 	}
-.quote {
-	height: 350px;
-}
+	.quote {
+		height: 350px;
+	}
+	.quote blockquote {
+		width: 220px;
+		font-size: 14px;
+		line-height: 20px;
+	}
+	.quote .author {
+		line-height: 40px;
+		font-size: 14px;
+	}
+	.quote .quote-beauty:before {
+		content: url(../img/commas-open-mini.svg);
+	}
+	.quote .quote-beauty:after {
+		content: url(../img/commas-close-mini.svg);
+		padding-top: 0;
+	}
+	.service__button-container {
+		display: none;
+	}
+	.service__cosmetic-photo a {
+		width: 80%;
+		margin: 0 auto;
+	}
+	.service__cosmetic-photo {
+		padding: 20px 20px;
+	}
+	.service__cosmetic-items p {
+		padding-bottom: 0;
+	}
 }
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
@@ -139,10 +182,9 @@
 	.menu .menu__main {
 		display: none;
 	}
-
-.quote {
-	height: 250px;
-}
+	.quote {
+		height: 250px;
+	}
 
 }
 /* Extra Small Devices, Phones */
@@ -165,18 +207,28 @@
 		width: 99%;
 	}
 
-.quote {
-	position: relative;
-	height: 200px;
-	width: 100%;
-}
+	.quote {
+		position: relative;
+		height: 200px;
+		width: 100%;
+	}
+	.quote blockquote {
+		width: 180px;
+		font-size: 10px;
+		line-height: 14px;
+	}
+	.quote .author {
+		line-height: 28px;
+		font-size: 11px;
+	}
 }
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px) {
 
-.quote {
-	height: 152px;
-}
+	.quote {
+		height: 152px;
+	}
+
 
 }

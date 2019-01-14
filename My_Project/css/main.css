@@ -62,6 +62,7 @@
 
 .info__number {
 	float: left;
+	padding-left: 40px;
 	font-style: normal;
 	width: 400px;
 }
@@ -122,7 +123,7 @@
 }
 .quote {
 	position: relative;
-	height: 800px;
+	height: 1100px;
 	width: 100%;	
 }
 .quote img {
@@ -134,14 +135,10 @@
 }
 .quote blockquote {
 	position: absolute;
-	max-width: 1280px;
-  left: 0; right: 0; top: 0; bottom: 0;
-  margin: auto;
-  padding-top: 10%;
-  padding-right: 50px;
-  text-align: right;
-  font: bold italic 22px/34px AvenirNextCyrThin;
+  right: 8%; top: 10%;
+  font: bold italic 22px/30px AvenirNextCyrThin;
 	color: white;
+	text-shadow: 0 0 5px black;
 }
 .quote .quote-beauty:before {
 	content: url(../img/commas-open.svg);
@@ -155,21 +152,22 @@
 	float: right;
 }
 .quote .author {
-	line-height: 50px;
+	line-height: 54px;
 	font-size: 24px;
 	text-transform: uppercase;
+	text-align: right;
 }
 .service {
 	background-color: rgba(12,75,81,.12);
 }
 .service__cosmetic-items h2 {
-	font: bold 32px/32px ProximaNovaBoldRegular;
-	padding: 40px 10px 40px;
+	font: bold 32px/40px ProximaNovaBoldRegular;
+	padding: 40px 20px 20px;
 	text-align: center;
 }
 .service__cosmetic-items p {
 	font: normal 24px/26px AvenirNextCyrThin;
-	padding: 0px 10px 60px;
+	padding: 0px 20px 40px;
 	text-align: justify;
 	text-indent: 30px;
 }
