@@ -185,6 +185,10 @@
 	.quote {
 		height: 250px;
 	}
+	.service__cosmetic-items p {
+		font-size: 18px;
+		line-height: 18px;
+	}
 
 }
 /* Extra Small Devices, Phones */
@@ -220,6 +224,15 @@
 	.quote .author {
 		line-height: 28px;
 		font-size: 11px;
+	}
+	.service__cosmetic-items h2 {
+		padding-top: 20px;
+		font-size: 28px;
+		line-height: 34px;
+	}
+	.service__cosmetic-items p {
+		font-size: 14px;
+		line-height: 14px;
 	}
 }
 
