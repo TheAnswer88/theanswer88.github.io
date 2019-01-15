@@ -271,7 +271,7 @@
 	text-align: center;
 }
 .carousel h2 {
-	padding-bottom: 20px; 
+	padding-bottom: 40px; 
 }
 .service__feedback p {
 	font: bold 16px/16px AvenirNextCyrThin;
@@ -280,23 +280,49 @@
 }
 .service__feedback-horisont-line {
 	margin: 20px auto;
-	width: 400px;
+	width: 70%;
   border-top: 1px solid #0C4B51;
 }
 .carousel {
 	padding: 40px 0 10px;
 }
 .carousel .owl-theme .owl-dots .owl-dot span {
+	width: 16px;
+  height: 16px;
+  margin: 8px 12px;
 	border-radius: 0;
 	background-color: #0C4B51;
 }
 .carousel .owl-theme .owl-dots .owl-dot.active span, .carousel .owl-theme .owl-dots .owl-dot:hover span {
+	width: 16px;
+  height: 16px;
+  margin: 8px 12px;
 	background-color: #E1AD4F;
+}
+.owl-carousel .owl-item  {
 }
 .owl-carousel {
 	max-width: 1280px;
+	height: 300px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+.owl-carousel__position {
+	min-height: auto; 
+	line-height: 200px; 
+	max-width: 200px;
 	margin: 0 auto;
 }
+.owl-carousel .owl-item img {
+	display: inline-block;
+	width: 100%;
+}
+.owl-carousel img {
+	vertical-align: middle;
+}
+.owl-theme .owl-nav.disabled + .owl-dots {
+  margin-top: 20px;
+  }
 .service__feedback form {
 	padding-top: 40px;
 }
@@ -308,7 +334,7 @@
 	display: block;
 	width: 95%;
 	height: 50px;
-	margin-bottom: 20px;
+	margin: 0 auto 20px;
 	padding: 0 20px;
 	border: none;
   border-radius: 3px;
@@ -333,7 +359,7 @@
   box-sizing: border-box;
   padding: 20px 20px;
   resize: none;
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
 }
 .feedback-part-two textarea::placeholder {
 	color: #0C4B51;
@@ -358,7 +384,6 @@ footer .about-wellness__logo a {
 	display: block;
 	margin: 0 auto;
 	width: 192px;
- 	height: 126px;
 }
 footer .about-wellness__logo img {
 	width: 100%;
