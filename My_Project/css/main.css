@@ -299,13 +299,12 @@
   margin: 8px 12px;
 	background-color: #E1AD4F;
 }
-.owl-carousel .owl-item  {
-}
 .owl-carousel {
 	max-width: 1280px;
 	height: 300px;
 	margin: 0 auto;
 	padding: 0 20px;
+	box-sizing: border-box;
 }
 .owl-carousel__position {
 	min-height: auto; 

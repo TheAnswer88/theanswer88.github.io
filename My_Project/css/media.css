@@ -217,6 +217,13 @@
 		font-size: 30px;
 		line-height: 30px;
 	}
+	.feedback-part-one input {
+		height: 40px;
+	}
+	.feedback-part-two textarea {
+		max-height: 100px;
+		min-height: 100px;
+	}
 	.carousel {
 		padding-top: 20px;
 	}
