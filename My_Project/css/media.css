@@ -187,10 +187,9 @@
 	.owl-carousel {
 		margin-bottom: 20px;
 	}
-
 	.owl-theme .owl-nav.disabled + .owl-dots {
 	  margin-top: 0;
-	  }
+	}
 
 
 }
@@ -240,6 +239,9 @@
 		font-size: 30px;
 		line-height: 30px;
 	}
+	.feedback {
+		padding-top: 40px;
+	}
 	.feedback-part-one input {
 		height: 40px;
 	}
@@ -255,13 +257,16 @@
 		line-height: 12px;
 	}
 	.carousel h2 {
-		padding-bottom: 0; 
+		padding-bottom: 20px; 
 	}
 	.owl-carousel__position {
-		line-height: 120px;
+		line-height: 150px;
 	}
 	.owl-carousel {
-		height: 120px;
+		height: 150px;
+	}
+	.owl-theme .owl-nav.disabled + .owl-dots {
+	  margin-top: 20px;
 	}
 
 
@@ -317,6 +322,12 @@
 		font-size: 12px;
 		line-height: 12px;
 		padding-bottom: 6px;
+	}
+	.carousel h2 {
+		padding-bottom: 0; 
+	}
+	.owl-theme .owl-nav.disabled + .owl-dots {
+	  margin-top: 0;
 	}
 
 }
