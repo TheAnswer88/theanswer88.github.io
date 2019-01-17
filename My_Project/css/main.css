@@ -12,16 +12,16 @@
 .dark-theme .container {
 	padding: 10px 0 10px;
 }
-	.dark-theme .menu-wrap {
-		padding: 0px 20px;
-	}
+.dark-theme .menu-wrap {
+	padding: 0px 20px;
+}
 .container:before,
 .container:after {
   content: " ";
   display: table;
   clear: both;
 }
-.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-6, .col-md-7 {
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-6, .col-md-7, .col-md-8 {
   float: left;	
 }
 .col-md-1 {
@@ -466,12 +466,18 @@ footer .about-wellness__logo img {
 .menu-wrap .container {
 	padding: 0;
 }
-.  {
-	background-color: #0C4B51;
-}
 .menu {
 	text-align: center;
-	min-height: 50px;
+	min-height: 0px;
+}
+.main_menu_button {
+	color: #fff;
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+  display: none;
 }
 .menu a {
 	text-decoration: none;
@@ -667,10 +673,8 @@ footer .about-wellness__logo img {
 }
 .certificate__wrap {
 	box-sizing: border-box;
-}
-.certificate__shadow {
 	box-shadow: 0 0 20px grey;
-	margin: 20px 0; 	
+	margin: 20px 0; 
 }
 .certificate__wrap img {
 	width: 100%;
@@ -683,7 +687,37 @@ footer .about-wellness__logo img {
 	padding: 20px;
 	margin-top: 6px;
 }
-
+.certificate p {
+	font: normal 18px/24px Roboto;
+	margin: 20px;
+	text-align: justify;
+	text-indent: 30px;
+}    
+.loaderArea {
+background: none repeat scroll 0 0 #ffffff;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+  }
+  .loader {
+    background-image: url(../img/preloader.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #fff;
+    height: 200px;
+    width: 200px;
+    margin-top: -100px;
+    margin-left: -100px;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+  }
 
 
 
