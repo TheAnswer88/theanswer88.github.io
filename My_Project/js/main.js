@@ -28,7 +28,7 @@ $(document).ready(function() {
 	});
 });
 $(document).ready(function() {
-		$(".main_menu_button_two").click(function() {
+		$(".menu__service").click(function() {
 		$(".menu .menu__service-wrap li").slideToggle("slow");
 	});
 });
