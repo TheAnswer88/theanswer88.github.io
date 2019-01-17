@@ -132,7 +132,8 @@
 	.menu__service:hover .menu__service-wrap {
     width: 80%;
 	}
-	.menu__about-us:hover .menu__about-us-wrap, .menu__service:hover .menu__service-wrap {
+	.menu__about-us:hover .menu__about-us-wrap, 
+	.menu__service:hover .menu__service-wrap {
     top: 50px;
     left: 0;
     right: 0;
@@ -267,13 +268,17 @@
 		line-height: 40px;
 		font-size: 14px;
 	}
+	.main_menu_button_two {
+		font-size: 14px;
+	}
 	.menu .menu__price {
 		width: 100%;
 	}
 	.main_menu_button {
 		display: inline-block;
 	}
-	.menu__about-us:hover .menu__about-us-wrap, .menu__service:hover .menu__service-wrap {
+	.menu__about-us:hover .menu__about-us-wrap, 
+	.menu__service:hover .menu__service-wrap {
     top: 40px;
   }
 	.quote {
