@@ -129,8 +129,9 @@
 	.menu a {
 		margin: 0;
 	}
+	.menu__about-us:hover .menu__about-us-wrap, 
 	.menu__service:hover .menu__service-wrap {
-    width: 80%;
+	  width: 80%;
 	}
 	.menu__about-us:hover .menu__about-us-wrap, 
 	.menu__service:hover .menu__service-wrap {

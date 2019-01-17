@@ -34,7 +34,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-		$(".main_menu_button_three").click(function() {
+		$(".menu__about-us").click(function() {
 		$(".menu .menu__about-us-wrap li").slideToggle("slow");
 	});
 });
