@@ -27,5 +27,10 @@ $(document).ready(function() {
 		$(".menu li").slideToggle("slow");
 	});
 });
+$(document).ready(function() {
+		$(".main_menu_button_two").click(function() {
+		$(".menu .menu__service-wrap li").slideToggle("slow");
+	});
+});
 
 

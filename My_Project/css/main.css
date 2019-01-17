@@ -504,6 +504,7 @@ footer .about-wellness__logo img {
 }
 .menu__about-us, .menu__service {
 	position: relative;
+	z-index: 5;
 }
 .menu__about-us:hover .menu__about-us-wrap, 
 .menu__service:hover .menu__service-wrap {
@@ -530,7 +531,6 @@ footer .about-wellness__logo img {
 	margin: -2px auto; 
 }
 .menu__service:hover .menu__service-wrap {
-	left: ;
 	width: 500px;
 }
 .procedure__text {

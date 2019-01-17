@@ -129,6 +129,23 @@
 	.menu a {
 		margin: 0;
 	}
+	.menu__service:hover .menu__service-wrap {
+    width: 80%;
+	}
+	.menu__about-us:hover .menu__about-us-wrap, .menu__service:hover .menu__service-wrap {
+    top: 50px;
+    left: 0;
+    right: 0;
+    /* bottom: 0; */
+    margin: auto;
+	}
+	.menu__about-us:hover .menu__about-us-wrap hr, 
+.menu__service:hover .menu__service-wrap hr {
+	display: none;
+}
+.menu__about-us hr {
+	display: none;
+}
 	.quote {
 		height: 350px;
 	}
@@ -256,6 +273,9 @@
 	.main_menu_button {
 		display: inline-block;
 	}
+	.menu__about-us:hover .menu__about-us-wrap, .menu__service:hover .menu__service-wrap {
+    top: 40px;
+  }
 	.quote {
 		height: 250px;
 	}
