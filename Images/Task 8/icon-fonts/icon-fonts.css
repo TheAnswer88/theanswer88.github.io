@@ -1,0 +1,63 @@
+.icon-fonts-container {
+	max-width: 1000px;
+	height: auto;
+	background-color: #ECECEC;
+	margin: 0 auto;
+	
+}
+.container::before, .container::after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+.icon-fonts-container h1 {
+	font: normal 30px/30px sans-serif;
+	text-transform: uppercase;
+	color: #444444; 
+	text-align: center;
+	padding: 20px 0;
+}
+.icons {
+	max-width: 920px;
+	margin: 0 auto;
+	padding: 20px;
+}
+.icon {
+	width: 225px;
+	height: 50px;
+	background-color: #FEA500;
+	float: left;
+	box-sizing: border-box;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	box-shadow: 0 2px 2px black;
+}
+.icon-wrap {
+	display: inline-block;
+	height: 50px;
+	width: 50px;
+	background-color: #444444;
+	float: left;
+}
+.icon span {
+	color: white;
+	line-height: 50px;
+	font-size: 36px;
+	text-align: center;
+	display: block;
+	background-color: #444444;
+}
+.icon h2, .icon p {
+	display: inline-block;
+	margin: 0;
+	color: white;
+	text-shadow: 0 2px 2px gray;
+}
+.icon h2 {
+	font: bold 16px/16px sans-serif;
+	padding: 8px 10px 0px;
+}
+.icon p {
+	font: bold 12px/12px sans-serif;
+	padding: 8px 10px 5px;
+}
