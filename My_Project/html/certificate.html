@@ -3,79 +3,87 @@
 <head>
 	<meta charset="UTF-8">
 	<title>ВЕЛНЕСЦЕНТР</title>
+	<!-- Font Awesome -->
+	<link rel="shortcut icon" type="image/x-icon" sizes="32x32" href="../img/logo.png">
+	<link rel="stylesheet" href="../libs/font-awesome/css/all.css">
+	<link rel="stylesheet" href="../libs/font-awesome/css/fontawesome.css">
 	<link rel="stylesheet" href="../css/main.css">
 	<link rel="stylesheet" href="../css/fonts.css">
 	<link rel="stylesheet" href="../css/media.css">
-	<!-- Owl carousel -->
-	<link rel="stylesheet" href="../libs/owl-carousel/owl.carousel.css">
-	<link rel="stylesheet" href="../libs/owl-carousel/owl.theme.default.css">
-
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
+	<!-- Header -->
 	<header class="dark-theme"><!--Время на блок 4 часа -->
 			<div class="container">
-				<div class="logo col-md-2">
+				<div class="logo col-md-2 col-sm-2 col-xs-3">
 					<a href="../index.html" title="Велнесцентр">
 						<img src="../img/logo.svg" alt="Велнесцентр"><!--Посмотреть продвижение, какие названия-->
 					</a>
 				</div>
-				<div class="name col-md-4">
+				<div class="name col-md-4 col-sm-5 col-xs-9">
 					<h1>Велнесцентр</h1>
 					<p>Оздоровительный центр</p>
 				</div>
-				<div class="info col-md-6">
+				<div class="info col-md-6 col-sm-5 col-xs-12">
 					<div class="info__number">
 						<p class="info__map">г.Полоцк, ул. Нижне-Покровская, д.21</p>
-						<p class="info__smartphone">+375 (33) 309-55-22</p>
-						<p class="info__smartphone">+375 (44) 730-25-55 <span class="info__clock">ПН - ПТ 10.00 - 21.00</span></p>
-						<p class="info__handphone">+375 (214) 70-25-55 <span>СБ - ВС 9.00 - 19.00</span></p>
+						<p class="info__smartphone"><a href="callto:#+375 (33) 309-55-22" title="+375 (33) 309-55-22"> +375 (33) 309-55-22</a></p>
+						<p class="info__smartphone second-number"><a href="callto:#+375 (44) 730-25-55" title="+375 (44) 730-25-55"> +375 (44) 730-25-55</a> <span class="info__clock">ПН - ПТ 10.00 - 21.00</span></p>
+						<p class="info__handphone"><a href="callto:#+375 (214) 70-25-55" title="+375 (214) 70-25-55"> +375 (214) 70-25-55</a> <span>СБ - ВС 9.00 - 19.00</span></p>
+						<button class="main_menu_button">
+							<i class="fas fa-bars"></i>
+						</button>
 					</div>
 					<div class="info__icon">
 						<ul >
-							<li><a href="#" class="info__viber"></a></li>
-							<li><a href="#" class="info__vkontakte"></a></li>
-							<li><a href="#" class="info__instagram"></a></li>
+							<li><a href="viber://chat?number=+375(44)730-25-55" class="info__viber" title="viber"><i class="fab fa-viber"></i></a></li>
+							<li><a href="https://vk.com/club117825476" class="info__vkontakte" title="vkontakte" target="_blank"><i class="fab fa-vk"></i></a></li>
+							<li><a href="https://www.instagram.com/cosmetic_polotsk/?utm_source=ig_profile_share&igshid=xjnpsojem05u" class="info__instagram" title="instagram" target="_blank"><i class="fab fa-instagram"></i></a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 	</header>
 	<!--Menu -->
-	<section class="dark-theme menu-wrap">
-		<div class="container">
-			<ul class="menu">
-				<li><a href="../index.html">Главная</a></li>
-				<li class="menu__about-us"><a href="#">О нас</a>
-					<ul class="menu__about-us-wrap">
-						<li><a href="#">Акции</a></li>
-						<hr>
-						<li><a href="#">Фотогарелея</a></li>
-						<hr>
-						<li><a href="#">Отзывы</a></li>
-					</ul>
-				</li>
-				<li class="menu__service"><a href="#">Услуги</a>
-					<ul class="menu__service-wrap">
-						<li><a href="aesthetic-cosmetology.html">Эстетическая косметология</a></li>
-						<hr>
-						<li><a href="figure-correction.html">Моделирование и коррекция фигуры</a></li>
-						<hr>
-						<li><a href="SPA-programs.html">СПА-программы</a></li>
-						<hr>
-						<li><a href="physiotherapy.html">Физиотерапия</a></li>
-						<hr>
-						<li><a href="hair-salon.html">Парикмахерский зал</a></li>
-						<hr>
-						<li><a href="nail-service.html">Ногтевой сервис</a></li>
-						<hr>
-						<li><a href="Formthotics.html">Ортопедические стельки Formthotics</a></li>
-					</ul>
-				</li>
-				<li><a href="#">Сертификаты</a></li>
-				<li><a href="price.html">Цены</a></li>
-				<li><a href="#">Контакты</a></li>
-			</ul>
+	<section class="dark-theme">
+		<div class="container menu-wrap">
+			<nav class="menu">
+				<ul>
+					<li class="menu__main without-menu"><a href="../index.html">Главная</a></li>
+					<li class="menu__about-us without-menu">
+						<a href="#">О нас
+							<button class="main_menu_button_three">
+								<i class="fas fa-arrow-circle-down"></i>
+							</button>
+						</a>
+						<ul class="menu__about-us-wrap">
+							<li><a href="stock.html">Акции</a></li>
+							<li><a href="photogallery.html">Фотогарелея</a></li>
+							<li><a href="comments.html">Отзывы</a></li>
+						</ul>
+					</li>
+					<li class="menu__service without-menu">
+						<a href="#">Услуги
+							<button class="main_menu_button_two">
+								<i class="fas fa-arrow-circle-down"></i>
+							</button>
+						</a>
+						<ul class="menu__service-wrap">
+							<li><a href="aesthetic-cosmetology.html">Эстетическая косметология</a></li>
+							<li><a href="figure-correction.html">Моделирование и коррекция фигуры</a></li>
+							<li><a href="SPA-programs.html">СПА-программы</a></li>
+							<li><a href="physiotherapy.html">Физиотерапия</a></li>
+							<li><a href="hair-salon.html">Парикмахерский зал</a></li>
+							<li><a href="nail-service.html">Ногтевой сервис</a></li>
+							<li><a href="Formthotics.html">Ортопедические стельки Formthotics</a></li>
+						</ul>
+					</li>
+					<li class="without-menu"><a href="certificate.html">Сертификаты</a></li>
+					<li class="without-menu"><a href="price.html">Цены</a></li>
+					<li class="menu__price without-menu"><a href="contacts.html">Контакты</a></li>
+				</ul>
+			</nav>
 		</div>
 	</section>
 	<!-- Certificate-->
@@ -147,5 +155,10 @@
 			</div>
 		</div>
 	</footer>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+	<!-- Jquery -->
+	<script src="../js/jquery.min.js"></script>
+	<!-- JavaScript -->
+	<script src="../js/main.js"></script>
 </body>
 </html>

@@ -39,6 +39,10 @@
 	.name h1 {
 		font-size: 46px;
 		line-height: 46px;
+		padding-left: 15%;
+	}
+	.name p {
+		padding-left: 15%;
 	}
 	.quote {
 		height: 450px;
@@ -131,15 +135,13 @@
 	}
 	.menu__about-us:hover .menu__about-us-wrap, 
 	.menu__service:hover .menu__service-wrap {
-	  width: 80%;
-	}
-	.menu__about-us:hover .menu__about-us-wrap, 
-	.menu__service:hover .menu__service-wrap {
     top: 50px;
     left: 0;
     right: 0;
     /* bottom: 0; */
     margin: auto;
+    width: 80%;
+    opacity: 1;
 	}
 	.menu__about-us:hover .menu__about-us-wrap hr, 
 .menu__service:hover .menu__service-wrap hr {
@@ -234,13 +236,16 @@
 	.cosmetology__photo h2 {
 		font: normal 14px/14px ProximaNovaBoldRegular;
 	}
+	.contacts h3, .contacts p {
+		text-align: center;
+	}
 
 
 }
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
 	.logo img {
-		min-width: 100px;
+		width: 100px;
 	}
 	.logo {
 		text-align: center;
@@ -269,7 +274,7 @@
 		line-height: 40px;
 		font-size: 14px;
 	}
-	.main_menu_button_two {
+	.main_menu_button_two, .main_menu_button_three{
 		font-size: 14px;
 	}
 	.menu .menu__price {
@@ -322,6 +327,9 @@
 	.owl-theme .owl-nav.disabled + .owl-dots {
 	  margin-top: 20px;
 	}
+	.service__price .under-content {
+		padding-left: 20px;		
+	}
 
 
 }
@@ -331,7 +339,7 @@
 		padding: 10px 10px 0;
 	}
 	.logo img {
-		min-width: 70px;
+		width: 70px;
 	}
 	.name h1 {
 		font-size: 28px;
@@ -392,6 +400,10 @@
 	.owl-theme .owl-nav.disabled + .owl-dots {
 	  margin-top: 0;
 	}
+	.service__content-left, .service__content-right {
+		font-size: 14px;
+		line-height: 14px;
+	}
 
 }
 
@@ -400,6 +412,10 @@
 
 	.quote {
 		height: 152px;
+	}
+	.service__content-left, .service__content-right {
+		font-size: 12px;
+		line-height: 12px;
 	}
 
 

@@ -2,6 +2,33 @@
 	margin: 0;
 	padding: 0;
 }
+/* Preloader */
+.loaderArea {
+	background: none repeat scroll 0 0 #ffffff;
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+.loader {
+  background-image: url(../img/preloader.gif);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #fff;
+  height: 200px;
+  width: 200px;
+  margin-top: -100px;
+  margin-left: -100px;
+  left: 50%;
+  top: 50%;
+  position: absolute;
+}
+/* Header */
 .dark-theme {
 	background-color: #0C4B51;
 }
@@ -46,9 +73,10 @@
   width: 66.66666667%;
 }
 .logo img {
-	min-width: 150px;
+	width: 150px;
  	height: auto;
 }
+/* Menu */
 .name h1 {
 	text-transform: uppercase;
 	font: 54px/54px ProximaNovaBoldItalic;
@@ -59,7 +87,6 @@
 	color: white;
 	padding-top: 4px;
 }
-
 .info__number {
 	float: left;
 	padding-left: 40px;
@@ -72,6 +99,14 @@
 .info__number p {
 	font: normal 16px/20px ProximaNovaBoldRegular;
 	color: white;
+}
+.info__smartphone a, .info__handphone a {
+	color: white;
+	text-decoration: none;
+}
+.info__smartphone a:hover, .info__handphone a:hover {
+	color: #E1AD4F;
+	text-decoration: underline;
 }
 .info__number .info__map::after {
 	content: url(../img/map.svg);
@@ -97,30 +132,29 @@
 }
 .info__icon {
 	float: right;
-	width: 116px;
+	width: 150px;
 	padding-top: 15px;
+	box-sizing: border-box;
 }
 .info__icon ul {
 	list-style: none;
 }
 .info__icon ul li a {
 	float: left;
-	margin-right: 10px;
-	height: 32px;
-	width: 32px;
+	padding-right: 10px;
+}
+.info__icon ul li i {
+	font-size: 40px;
+	color: #FFB039;
+}
+.info__icon ul li i:hover {
+	color: #E1AD4F;
+	transform: scale(1.1);
 }
 .info__icon ul li:last-child a {
-	margin-right: 0;
+	padding-right: 0;
 }
-.info__icon .info__viber {
-	background: url(../img/viber.svg) no-repeat;
-}
-.info__icon .info__vkontakte {
-	background: url(../img/vkontakte.svg) no-repeat center center;
-}
-.info__icon .info__instagram {
-	background: url(../img/instagram.svg) no-repeat;
-}
+/* Poster */
 .quote {
 	position: relative;
 	height: 1100px;
@@ -157,6 +191,7 @@
 	text-transform: uppercase;
 	text-align: right;
 }
+/* Услуги космитологии */
 .service {
 	background-color: rgba(12,75,81,.12);
 }
@@ -253,6 +288,15 @@
 	width: 70%;
   border-top: 1px solid #0C4B51;
 }
+.service__feedback {
+}
+.service__feedback h2, .carousel h2 {
+	font: bold 36px/36px ProximaNovaBoldRegular;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	text-align: center;
+}
+/* Карта*/
 .address {
 	max-width: 1280px;
 	margin: 0 auto;
@@ -262,26 +306,9 @@
 	max-width: 100%;
 	box-shadow: 0 0 10px 1px gray;
 }
-.service__feedback {
-}
-.service__feedback h2, .carousel h2 {
-	font: bold 36px/36px ProximaNovaBoldRegular;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	text-align: center;
-}
+/*  Карусель */
 .carousel h2 {
 	padding-bottom: 40px; 
-}
-.service__feedback p {
-	font: bold 16px/16px AvenirNextCyrThin;
-	text-align: center;
-	color: gray;
-}
-.service__feedback-horisont-line {
-	margin: 20px auto;
-	width: 70%;
-  border-top: 1px solid #0C4B51;
 }
 .carousel {
 	padding: 40px 0 10px;
@@ -321,7 +348,18 @@
 }
 .owl-theme .owl-nav.disabled + .owl-dots {
   margin-top: 20px;
-  }
+}
+/* Форма обратной связи */
+.service__feedback p {
+	font: bold 16px/16px AvenirNextCyrThin;
+	text-align: center;
+	color: gray;
+}
+.service__feedback-horisont-line {
+	margin: 20px auto;
+	width: 70%;
+  border-top: 1px solid #0C4B51;
+}
 .service__feedback form {
 	padding-top: 40px;
 }
@@ -371,6 +409,7 @@
 .feedback .service__button-container {
 	margin-bottom: 0;
 }
+/* FOOTER */
 .copyright p {
 	font: normal 16px/16px ProximaNovaBoldRegular;
 	color: white;
@@ -481,7 +520,7 @@ footer .about-wellness__logo img {
 }
 .main_menu_button_two, .main_menu_button_three {
 	color: #fff;
-  padding-left: 10px;
+  margin-left: 10px;
   background-color: transparent;
   border: none;
   font-size: 16px;
@@ -503,6 +542,7 @@ footer .about-wellness__logo img {
 	font: normal 16px/16px ProximaNovaBoldRegular;
 	line-height: 50px;
 	color: white;
+	width: 100%;
 }
 .menu a:hover {
 	background-color: #E1AD4F;
@@ -512,7 +552,6 @@ footer .about-wellness__logo img {
 }
 .menu__about-us, .menu__service {
 	position: relative;
-	z-index: 5;
 }
 .menu__about-us:hover .menu__about-us-wrap, 
 .menu__service:hover .menu__service-wrap {
@@ -531,6 +570,7 @@ footer .about-wellness__logo img {
 	margin: 0;
 	padding: 0;
 	width: 100%;
+	border-bottom: 1px solid #0C4B51;
 }
 .menu__about-us:hover .menu__about-us-wrap hr, 
 .menu__service:hover .menu__service-wrap hr {
@@ -595,6 +635,14 @@ footer .about-wellness__logo img {
 .contacts__requisites a {
 	color: #0C4B51;
 	text-decoration: none;	
+}
+.contacts__left {
+	padding-left: 10px;
+	box-sizing: border-box;
+}
+.contacts__right {
+	padding-right: 10px;
+	box-sizing: border-box;
 }
 
 .procedure p, .procedure ul, .procedure ol {
@@ -682,7 +730,7 @@ footer .about-wellness__logo img {
 .certificate__wrap {
 	box-sizing: border-box;
 	box-shadow: 0 0 20px grey;
-	margin: 20px 0; 
+	margin: 20px 0;
 }
 .certificate__wrap img {
 	width: 100%;
@@ -700,61 +748,4 @@ footer .about-wellness__logo img {
 	margin: 20px;
 	text-align: justify;
 	text-indent: 30px;
-}    
-.loaderArea {
-background: none repeat scroll 0 0 #ffffff;
-    bottom: 0;
-    height: 100%;
-    left: 0;
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: 100%;
-    z-index: 9999;
-  }
-  .loader {
-    background-image: url(../img/preloader.gif);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-color: #fff;
-    height: 200px;
-    width: 200px;
-    margin-top: -100px;
-    margin-left: -100px;
-    left: 50%;
-    top: 50%;
-    position: absolute;
-  }
-
-
-
-
-
-/*
-.menu__service .menu__service-wrap {
-	display: none;
-}
-.menu__service {
-	position: relative;
-}
-.menu__service:hover .menu__service-wrap {
-	display: block;
-	position: absolute;
-	z-index: 10;
-	top: 35px;
-	left: -45px;
-	background-color: white;
-	width: 200px;
-}
-.menu__service:hover .menu__service-wrap a {
-	color: black;
-	margin: 0;
-	padding: 0;
-	width: 100%; 
-}
-.menu__service:hover .menu__service-wrap hr {
-	width: 80%;
-	color: blue;
-	margin: -2px auto; 
 }
