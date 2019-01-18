@@ -442,7 +442,7 @@ footer .about-wellness__logo img {
 }
 .cosmetology h1 {
 	text-align: center;
-	padding: 40px 0;
+	padding: 20px 0;
 	font: bold 32px/32px ProximaNovaBoldRegular;
 	text-transform: uppercase;
 }
@@ -749,3 +749,22 @@ footer .about-wellness__logo img {
 	text-align: justify;
 	text-indent: 30px;
 }
+	.to-top {
+	display: none;
+	font-size: 20px;
+	padding: 10px;
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	background: #FFB039;
+	border: 2px solid #0C4B51;
+	color: #0C4B51;
+	text-decoration: none;
+	opacity: .5;
+	}
+
+	.to-top:hover {
+	background: #E1AD4F;
+	opacity: 1;
+	box-shadow: 0 0 5px black;
+	}

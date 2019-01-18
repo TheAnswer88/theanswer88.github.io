@@ -15,18 +15,22 @@ $('.stop').on('click',function(){
     owl.trigger('stop.owl.autoplay')
 })
 });
+
 new WOW().init();
+
 $(window).on('load', function () {
     $preloader = $('.loaderArea'),
       $loader = $preloader.find('.loader');
     $loader.fadeOut();
     $preloader.delay(350).fadeOut('slow');
   });
+
 $(document).ready(function() {
 		$(".main_menu_button").click(function() {
 		$(".menu li").slideToggle("slow");
 	});
 });
+
 $(document).ready(function() {
 		$(".menu__service").click(function() {
 		$(".menu .menu__service-wrap li").slideToggle("slow");
@@ -39,4 +43,18 @@ $(document).ready(function() {
 	});
 });
 
+$(function() {
+  $(window).scroll(function() { 
+    if($(this).scrollTop() > 1000) {
+      $('.to-top').fadeIn(1000);
+    } else {
+      $('.to-top').fadeOut(200);
+    }
+  });
+    
+  $('.to-top').on('click', function(event) {
+    event.preventDefault();
+    $('body,html').animate({scrollTop:0}, 1000);
+  });
 
+});

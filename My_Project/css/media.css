@@ -34,7 +34,7 @@
 		margin-bottom: 5px;
 	}
 	.logo img {
-		min-width: 125px;
+		width: 125px;
 	}
 	.name h1 {
 		font-size: 46px;
@@ -233,11 +233,32 @@
 		margin: 20px 10% 0; 
 		width: 80%;
 	}
+	.cosmetology h1 {
+  padding: 20px 0;
+  font: bold 28px/28px ProximaNovaBoldRegular;
+	}
+	.service__feedback-horisont-line {
+    margin: 10px auto;
+  }
 	.cosmetology__photo h2 {
 		font: normal 14px/14px ProximaNovaBoldRegular;
 	}
 	.contacts h3, .contacts p {
 		text-align: center;
+	}
+	.procedure p {
+		text-indent: 20px;
+		padding-bottom: 10px;
+		font: normal 16px/24px Roboto;
+	}
+	.procedure img {
+		width: 200px;
+	}
+	.procedure ul, .procedure ol li {
+		font: normal 16px/24px Roboto;
+	}
+	.procedure ul li, .procedure ol li {
+    padding-bottom: 5px;
 	}
 
 
@@ -249,6 +270,9 @@
 	}
 	.logo {
 		text-align: center;
+	}
+	.name h1, .name p {
+		padding-left: 0;
 	}
 	.info .info__number {
 	}
@@ -330,7 +354,21 @@
 	.service__price .under-content {
 		padding-left: 20px;		
 	}
-
+	.procedure p {
+		text-indent: 20px;
+		padding-bottom: 10px;
+		font: normal 12px/20px Roboto;
+	}
+	.procedure ul, .procedure ol li {
+		font: normal 12px/22px Roboto;
+	}
+	.procedure ul li, .procedure ol li {
+    padding-bottom: 5px;
+	}
+	.procedure img {
+    width: 100%;
+    margin-bottom: 20px;
+	}
 
 }
 /* Extra Small Devices, Phones */
@@ -357,6 +395,10 @@
   }
 	.menu-wrap {
 		padding: 6px;
+	}
+	.menu__about-us:hover .menu__about-us-wrap li,
+	.menu__service:hover .menu__service-wrap li {
+		font-size: 8px;
 	}
 	.quote {
 		position: relative;
