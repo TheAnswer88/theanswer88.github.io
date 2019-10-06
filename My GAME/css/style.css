@@ -1,0 +1,75 @@
+html {
+	height: 100%;
+}
+body {
+	padding: 0;
+	margin: 0;
+	background: radial-gradient(#4CCEB2, #2F8FD8);
+}
+.game {
+   width: 1000px;
+   height: 600px;
+   margin: 50px auto;
+   border: 1px solid black;
+   background-color: #0F143C;
+}
+#wrap_letters {
+	width: 750px;
+	min-height: 55%;
+	padding-top: 50px;
+	margin: auto;
+}
+img {
+	display: block;
+	margin: auto;
+}
+.letter {
+	width: 150px;
+	opacity: 0;
+	float: left;
+}
+.fontSnake {
+	width: 20%;
+	opacity: 0;
+	animation-name: logo;
+	animation-duration: 2s; /* Продолжительность анимации */
+  animation-delay: 1s; /* Задержка */
+  animation-fill-mode: forwards;
+}
+@keyframes logo {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+.lettersAnim {
+	animation: glitch 1.5s forwards; /*анимация воздействует на элемент по окончании воспроизведения.*/
+}
+@keyframes glitch {
+	0% {
+		opacity: 0;
+	}
+	40% {
+		opacity: 1;
+	}
+	45% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	55% {
+		opacity: 0;
+	}
+	75% {
+		opacity: 1;
+	}
+	90% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
