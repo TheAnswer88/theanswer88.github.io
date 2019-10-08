@@ -6,6 +6,7 @@ var SnakeGame = {
 		letterK: null,
 		letterE: null
 	},
+	cell: null,
 	preload: function () {
 		// описание поля игры
 		var createGame = document.querySelector('body');
@@ -37,6 +38,16 @@ var SnakeGame = {
 
 		// запуск анимации букв
 		this.preloadAnim();
+
+		// исчезновение заставки
+		function hidePreload() {
+			//gameTitle.style.display = 'none'; //remove()
+			//snakeImage.style.display = 'none';
+			gameTitle.remove();
+			snakeImage.remove();
+		}
+		setTimeout(hidePreload, 4000);
+
 		},
 	preloadAnim: function () {
 		var item = document.getElementById('wrap_letters');
@@ -60,13 +71,35 @@ var SnakeGame = {
 		}
 		generateLetters();
 	},
+	createSells: function() {
+		var createGameField = document.querySelector('.game'); // находим див
+		var createGameCells = document.createElement('div');
+		createGameCells.classList.add('gameCells');
+		createGameField.append(createGameCells);
+		
+		// появление ячеек
+		function appearCell() {
+			for (i = 0; i < 720; i++) {
+				this.cell = document.createElement('div'); // создаем ячейку
+				createGameCells.append(this.cell); // помещаем в него ячейку
+				this.cell.classList.add('cell');
+			}
+		}
+		setTimeout(appearCell, 4000);
+
+		//создание координат
+		this.createCoordinates();
+	},
+	createCoordinates: function() {
+		var eachSell = document.getElementsByClassName('cell');
+		console.log(eachSell);
+	},
 	start: function () {
 		this.preload();
+		this.createSells();
 	}
 };
 SnakeGame.start();
-
-	
 
 
 
