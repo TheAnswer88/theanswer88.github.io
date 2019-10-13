@@ -38,7 +38,6 @@ img {
 .cell {
 	width: 25px;
 	height: 25px;
-	padding: 2px;
 	background-color: #fff;
 	display: inline-block;
 	box-sizing: border-box;
@@ -47,8 +46,23 @@ img {
 .gameCells {
 	width: 750px;
 	height: 600px;
-	display: flex;
-	flex-wrap: wrap;
+	display: none;
+}
+.snakeBody {
+	background-image: url(../img/snake_graphics_mini.png);
+	background-position: 107px 107px;
+}
+.snakeHead {
+	background-image: url(../img/snake_graphics_mini.png);
+	background-position: 25px 106px;
+}
+.snakeTail {
+	background-image: url(../img/snake_graphics_mini.png);
+	background-position: 25px 52px;
+}
+.snakeFood {
+	background-image: url(../img/snake_graphics_mini.png);
+	background-position: 136px 26px;
 }
 @keyframes logo {
 	from {
