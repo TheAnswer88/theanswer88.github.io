@@ -194,12 +194,12 @@ var SnakeGame = {
 		this.snakeBody.push(document.querySelector('[posx = "' + (+this.snakeCoordinates[0] + this.step - 2) + '"]' + '[posy = "' + this.snakeCoordinates[1] + '"]'));
 		this.snakeBody[this.snakeBody.length - 1].classList.add('snakeTail');
 		this.snakeBody.pop();
-
 		
-		//for (var i = 1; i < this.snakeBody.length; i++) {
+		for (var i = 1; i < this.snakeBody.length-1; i++) {
 			//this.snakeBody[i].push(document.querySelector('[posx = "' + (+this.snakeCoordinates[0] + this.step - 1) + '"]' + '[posy = "' + this.snakeCoordinates[1] + '"]'));
-			//this.snakeBody[i].classList.add('snakeBody');
-		//}
+			
+			this.snakeBody[i].classList.add('snakeBody');
+		}
 
 		//this.snakeBody[this.snakeBody.length - 1].classList.remove('snakeTail');
 		//this.snakeBody.pop();
