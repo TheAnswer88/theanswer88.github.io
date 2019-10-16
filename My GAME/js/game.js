@@ -27,11 +27,11 @@ var SnakeGame = {
 	createGameField: null,
 	createGameCells: null,
 	interval: null,
-	delete: null,
+	changeDirection: null,
 	snakeBodyHead: null,
 	snakeBodyBody: null,
 	snakeBodyTail: null,
-	step: 1,
+	direction: 'right',
 	preload: function () {
 		// описание поля игры
 		this.createGame = document.querySelector('body');
@@ -63,29 +63,24 @@ var SnakeGame = {
 
 		// запуск анимации букв
 		this.preloadAnim();
-		this.createSells();
-		setTimeout(hidePreload, 4000);
-		console.log(this.snakeImage);
+		//setTimeout(hidePreload, 4000);
 
 		// исчезновение заставки
-		function hidePreload() {
-			var snakeImage = document.querySelector('.fontSnake');
-			var gameTitle = document.querySelector('#wrap_letters');
-			var createGameField = document.querySelector('.gameCells');
-			snakeImage.remove();
-			gameTitle.remove();
-			createGameField.style.display = 'flex';
-			createGameField.style.flexWrap = 'wrap';
-		}
-		},/*
-	hidePreload: function() {
-		var snakeImage = document.querySelector('.fontSnake');
-		var gameTitle = document.querySelector('#wrap_letters');
-		//this.gameTitle.style.display = 'none'; //remove()
-		//this.snakeImage.style.display = 'none';
-		this.createGame.style.background = 'red';
-		//this.snakeImage.remove();
-		},*/
+		
+		},
+		preloadDelay: function () {
+
+		setTimeout(() => {this.hidePreload();}, 4000);
+		},
+		hidePreload: function () {
+			//this.snakeImage = document.querySelector('.fontSnake');
+			//this.gameTitle = document.querySelector('#wrap_letters');
+			this.createGameField = document.querySelector('.gameCells');
+			this.snakeImage.remove();
+			this.gameTitle.remove();
+			this.createGameField.style.display = 'flex';
+			this.createGameField.style.flexWrap = 'wrap';
+		},
 	preloadAnim: function () {
 		var item = document.getElementById('wrap_letters');
 		var letters = [];
@@ -178,58 +173,59 @@ var SnakeGame = {
 		}
 		console.log(food);
 	},
-	move: function () { // движение змеи - удаление головы и хваста и наращивание тела
-		//this.snakeBody[0].classList.remove('snakeHead'); // удаление головы
-		//this.snakeBody[this.snakeBody.length - 1].classList.remove('snakeTail'); // удаление хвоста
-		//this.snakeBody.pop(); // удаляем последний элемент массива
-		//this.snakeBody.unshift(this.snakeBody[1]);// на первое место массива помещаем соседнюю ячейку
-		//this.snakeBody[0].classList.add('snakeHead');
-		//this.snakeBody[this.snakeBody.length - 1].classList.add('snakeTail');
-		
-		this.snakeBody[0].classList.remove('snakeHead');
-		this.snakeBody[this.snakeBody.length - 1].classList.remove('snakeTail');
-		this.snakeBody.pop();
-		this.snakeBody.unshift(document.querySelector('[posx = "' + (+this.snakeCoordinates[0] + this.step) + '"]' + '[posy = "' + this.snakeCoordinates[1] + '"]'));
+	moveRight: function () { // движение змеи - удаление головы и хваста и наращивание тела
+		var p = [this.snakeBody[0].getAttribute('posx'), this.snakeBody[0].getAttribute('posy')];
+		this.snakeBody[0].classList.remove('snakeHead'); // удаление головы
+		this.snakeBody[this.snakeBody.length - 1].classList.remove('snakeTail'); // удаление хвоста
+
+		this.snakeBody[this.snakeBody.length - 1].classList.remove('snakeBody');
+		this.snakeBody.pop(); // удаляем последний элемент массива
+
+		if (this.direction == 'top') {
+			console.log('hurra');
+		}
+		if (p[0] < this.cellsSize.x) { // если змейка доходит до правого края поля
+			this.snakeBody.unshift(document.querySelector('[posx = "' + (+p[0] + 1) + '"]' + '[posy = "' + p[1] + '"]'));
+		} else {
+			this.snakeBody.unshift(document.querySelector('[posx = "1"]' + '[posy = "' + p[1] + '"]')); // появляется сначала левого поля
+		}
 		this.snakeBody[0].classList.add('snakeHead');
-		this.snakeBody.push(document.querySelector('[posx = "' + (+this.snakeCoordinates[0] + this.step - 2) + '"]' + '[posy = "' + this.snakeCoordinates[1] + '"]'));
+
 		this.snakeBody[this.snakeBody.length - 1].classList.add('snakeTail');
-		this.snakeBody.pop();
 		
-		for (var i = 1; i < this.snakeBody.length-1; i++) {
-			//this.snakeBody[i].push(document.querySelector('[posx = "' + (+this.snakeCoordinates[0] + this.step - 1) + '"]' + '[posy = "' + this.snakeCoordinates[1] + '"]'));
-			
+		for (var i = 0; i < this.snakeBody.length; i++) {
 			this.snakeBody[i].classList.add('snakeBody');
 		}
-
-		//this.snakeBody[this.snakeBody.length - 1].classList.remove('snakeTail');
-		//this.snakeBody.pop();
-		//this.snakeBody.unshift(document.querySelector('[posx = "' + (+this.snakeCoordinates[0] + 1) + '"]' + '[posy = "' + this.snakeCoordinates[1] + '"]'));
-		//this.snakeBody[0].classList.add('snakeHead');
-		//this.snakeBody.shift(document.querySelector('[posx = "' + (+this.snakeCoordinates[0] - 3) + '"]' + '[posy = "' + this.snakeCoordinates[1] + '"]'));
-		//this.snakeBody[this.snakeBody.length - 1].classList.add('snakeTail');
-
-		this.step++;
-
-		console.log(this.snakeBody);
-		console.log(this.snakeCoordinates[0]);
-
+		this.direction;
+	},
+	moveTop: function () {
+		console.log('pop');
 	},
 	interval: function () {
-		setInterval(() => {this.move();}, 5000); // запуск функции через интервал
+		setInterval(() => {this.moveRight();}, 1000); // запуск функции через интервал
 	},
-	delete: function () {
+	changeDirection: function () {
 		document.addEventListener('keydown', function(event) {
-			if (event.code == 'ControlLeft') {
-				console.log('delete');
+			if (event.code == 'ArrowLeft') {
+			}
+			else if (event.code == 'ArrowUp') {
+				this.direction = 'top';
+			}
+			else if (event.code == 'ArrowRight') {
+				this.direction = 'right';
+			}
+			else if (event.code == 'ArrowDown') {
 			}
 		});
 	},
 	start: function () {
 		this.preload();
+		this.preloadDelay();
+		this.createSells();
 		this.createSnake();
 		this.createSnakeFood();
 		this.interval();
-		this.delete();
+		this.changeDirection();
 	}
 };
 SnakeGame.start();
