@@ -1,3 +1,6 @@
+@font-face {
+	font-family: GamjaFlower;
+}
 html {
 	height: 100%;
 }
@@ -64,6 +67,50 @@ img {
 	background-image: url(../img/snake_graphics_mini.png);
 	background-position: 136px 26px;
 }
+.gameInfo {
+	width: 250px;
+	height: 50px;
+	color: #fff;
+	text-align: center;
+	margin: 50px auto 0px;
+	line-height: 50px;
+	font-size: 24px;
+	position: relative;
+}
+.gameInfo::before {
+	content: '';
+	background-image: url(../img/snake_graphics_mini.png);
+	background-position: 136px 26px;
+	height: 26px;
+	width: 33px;
+	position: absolute;
+	left: 85px;
+	top: 10px;
+}
+.gameButton {
+	margin: 30px auto;
+	font: bold 32px/60px 'Gamja Flower', cursive;
+	height: 60px;
+	width: 200px;
+	text-align: center;
+	background-color: yellow;
+	color: #094DEA;
+	text-decoration: none;
+	box-shadow: 0px 6px 15px rgba(9,77,234, .4);
+	transition: .4s;
+}
+.gameButton:hover {
+	background-color: #094DEA;
+	color: yellow;
+	box-shadow: 0px 8px 20px rgba(255,255,0, .8);
+	transform: translateY(-8px);
+	letter-spacing: 3px;
+	cursor: pointer;
+}
+.gameButton:active {
+	box-shadow: 0px 0px 0px 5px rgba(255,255,0, 1) inset;
+}
+
 @keyframes logo {
 	from {
 		opacity: 0;

@@ -19,6 +19,7 @@ var SnakeGame = {
 		y: 1
 	},
 	snakeFood: [],
+	food: null,
 	createGame: null,
 	gameField: null,
 	gameTitle: null,
@@ -32,6 +33,11 @@ var SnakeGame = {
 	snakeBodyBody: null,
 	snakeBodyTail: null,
 	direction: 'right',
+	steps: false,
+	audio_eat: null,
+	scorePoint: 0,
+	playGame: null,
+	playGameStart: false,
 	preload: function () {
 		// описание поля игры
 		this.createGame = document.querySelector('body');
@@ -61,6 +67,10 @@ var SnakeGame = {
 		this.snakeImage.src = 'img/front_snake.png';
 		this.snakeImage.classList.add('fontSnake');
 
+		// заранее созданее кнопки и счета
+		this.gameInfo = document.createElement('div');
+		this.gameButton = document.createElement('div');
+
 		// запуск анимации букв
 		this.preloadAnim();
 		//setTimeout(hidePreload, 4000);
@@ -80,6 +90,21 @@ var SnakeGame = {
 			this.gameTitle.remove();
 			this.createGameField.style.display = 'flex';
 			this.createGameField.style.flexWrap = 'wrap';
+
+			// создание элементов информации для игры
+			this.gameInfo.innerHTML = '<span class="change"> - ' + this.scorePoint + '</span>';
+			this.gameInfo.classList.add('gameInfo');
+			this.gameField.appendChild(this.gameInfo);
+			this.gameField.style.display = 'flex';
+
+			// кнопка начала игры
+			this.gameInfo.appendChild(this.gameButton);
+			this.gameButton.classList.add('gameButton');
+			this.playGame = document.querySelector('.gameButton');
+			this.playGame.innerText = 'Start';
+			console.log(this.playGame);
+
+
 		},
 	preloadAnim: function () {
 		var item = document.getElementById('wrap_letters');
@@ -109,11 +134,9 @@ var SnakeGame = {
 		this.createGameCells.classList.add('gameCells');
 		this.createGameField.appendChild(this.createGameCells); // поле с ячейками
 		this.appearCell()	;
-		// появление ячеек
-		//setTimeout(this.appearCell(), 6000);
 
-		//создание координат
-		//this.createCoordinates();
+
+
 	},
 	appearCell: function() {
 		for (i = 0; i < 720; i++) {
@@ -160,62 +183,132 @@ var SnakeGame = {
 	createSnakeFood: function () {
 		var snakeFoodX = Math.round(Math.random() * (this.cellsSize.x - 1) + 1); // рандомные x, y змеи, минимальное значение 3, чтобы змейка попала в поле
 		var snakeFoodY = Math.round(Math.random() * (this.cellsSize.y - 1) + 1);
-		this.snakeFood.push(snakeFoodX);
-		this.snakeFood.push(snakeFoodY);
-		console.log(this.snakeFood);
+		this.snakeFood[0] = snakeFoodX;
+		this.snakeFood[1] = snakeFoodY;
 
 		// создание еды для змеи
-		var food = document.querySelector('[posx = "' + this.snakeFood[0] + '"]' + '[posy = "' + this.snakeFood[1] + '"]');
-		food.classList.add('snakeFood');
+		this.food = document.querySelector('[posx = "' + this.snakeFood[0] + '"]' + '[posy = "' + this.snakeFood[1] + '"]');
+		this.food.classList.add('snakeFood');
 
-		while(food.classList.add('snakeHead') || food.classList.add('snakeBody') || food.classList.add('snakeTail')) {
+		// возможное пересечения еды с телом змеи
+		while(this.food.classList.contains('snakeBody') || this.food.classList.contains('snakeBody') || this.food.classList.contains('snakeTail')) {
 			this.createSnakeFood();
 		}
-		console.log(food);
+		console.log(this.food);
 	},
 	moveRight: function () { // движение змеи - удаление головы и хваста и наращивание тела
-		var p = [this.snakeBody[0].getAttribute('posx'), this.snakeBody[0].getAttribute('posy')];
+		var snakeCoordinatesNow = [this.snakeBody[0].getAttribute('posx'), this.snakeBody[0].getAttribute('posy')];
 		this.snakeBody[0].classList.remove('snakeHead'); // удаление головы
 		this.snakeBody[this.snakeBody.length - 1].classList.remove('snakeTail'); // удаление хвоста
 
 		this.snakeBody[this.snakeBody.length - 1].classList.remove('snakeBody');
 		this.snakeBody.pop(); // удаляем последний элемент массива
 
-		if (this.direction == 'top') {
-			console.log('hurra');
+		if (this.direction == 'right') {
+			if (snakeCoordinatesNow[0] < this.cellsSize.x) { // если змейка доходит до правого края поля
+				this.snakeBody.unshift(document.querySelector('[posx = "' + (+snakeCoordinatesNow[0] + 1) + '"]' + '[posy = "' + snakeCoordinatesNow[1] + '"]'));
+			} else {
+				this.snakeBody.unshift(document.querySelector('[posx = "1"]' + '[posy = "' + snakeCoordinatesNow[1] + '"]')); // появляется сначала левого поля
+			}
+		} else if (this.direction == 'down') {
+			if (snakeCoordinatesNow[1] < this.cellsSize.y) { // если змейка доходит до правого края поля
+				this.snakeBody.unshift(document.querySelector('[posx = "' + snakeCoordinatesNow[0] + '"]' + '[posy = "' + (+snakeCoordinatesNow[1] + 1) + '"]'));
+			} else {
+				this.snakeBody.unshift(document.querySelector('[posx = "' + snakeCoordinatesNow[0] + '"]' + '[posy = "1"]')); // появляется сначала левого поля
+			}
+		} else if (this.direction == 'left') {
+			if (snakeCoordinatesNow[0] > 1) { // если змейка доходит до правого края поля
+				this.snakeBody.unshift(document.querySelector('[posx = "' + (+snakeCoordinatesNow[0] - 1) + '"]' + '[posy = "' + snakeCoordinatesNow[1] + '"]'));
+			} else {
+				this.snakeBody.unshift(document.querySelector('[posx = "' + this.cellsSize.x + '"]' + '[posy = "' + snakeCoordinatesNow[1] + '"]')); // появляется сначала левого поля
+			}
+		} else if (this.direction == 'up') {
+			if (snakeCoordinatesNow[1] > 1) { // если змейка доходит до правого края поля
+				this.snakeBody.unshift(document.querySelector('[posx = "' + snakeCoordinatesNow[0] + '"]' + '[posy = "' + (+snakeCoordinatesNow[1] - 1) + '"]'));
+			} else {
+				this.snakeBody.unshift(document.querySelector('[posx = "' + snakeCoordinatesNow[0] + '"]' + '[posy = "' + this.cellsSize.y + '"]')); // появляется сначала левого поля
+			}
 		}
-		if (p[0] < this.cellsSize.x) { // если змейка доходит до правого края поля
-			this.snakeBody.unshift(document.querySelector('[posx = "' + (+p[0] + 1) + '"]' + '[posy = "' + p[1] + '"]'));
-		} else {
-			this.snakeBody.unshift(document.querySelector('[posx = "1"]' + '[posy = "' + p[1] + '"]')); // появляется сначала левого поля
-		}
-		this.snakeBody[0].classList.add('snakeHead');
 
-		this.snakeBody[this.snakeBody.length - 1].classList.add('snakeTail');
+		// встреча головы с едой
+		if (this.snakeBody[0].getAttribute('posx') == this.snakeFood[0] && this.snakeBody[0].getAttribute('posy') == this.snakeFood[1]) {
+			this.food.classList.remove('snakeFood');
+
+			// наращивание счета
+			this.scorePoint++;
+			document.querySelector('.change').innerText = this.scorePoint;
+
+			// звук поедания
+			this.audio_eat = new Audio('../audio/eat_sound.mp3');
+			this.audio_eat.play();
+			// добавление элемента тела к змейке
+			var a = this.snakeBody[this.snakeBody.length - 1].getAttribute('posx');
+			var b = this.snakeBody[this.snakeBody.length - 1].getAttribute('posy');
+			this.snakeBody.push(document.querySelector('[posx = "' + a + '"]' + '[posy = "' + b + '"]')); // добавление в массив ячейки тела
+			console.log(this.food);
+			// новая позиция еды
+			this.createSnakeFood();
+		}
+
+		// пересечение головы с телом
+		if (this.snakeBody[0].classList.contains('snakeBody')) {
+			//clearInterval(() => SnakeGame.interval());
+			console.log('STOP');
+		}
 		
-		for (var i = 0; i < this.snakeBody.length; i++) {
+		this.snakeBody[0].classList.add('snakeHead');
+		this.snakeBody[this.snakeBody.length - 1].classList.add('snakeTail');
+		for (var i = 1; i < this.snakeBody.length; i++) {
 			this.snakeBody[i].classList.add('snakeBody');
 		}
+
+		// направление
 		this.direction;
-	},
-	moveTop: function () {
-		console.log('pop');
+
+		// после каждого хода 
+		this.steps = true;
+
 	},
 	interval: function () {
-		setInterval(() => {this.moveRight();}, 1000); // запуск функции через интервал
+		setInterval(() => {this.moveRight();}, 200); // запуск функции через интервал
 	},
 	changeDirection: function () {
-		document.addEventListener('keydown', function(event) {
-			if (event.code == 'ArrowLeft') {
+		document.addEventListener('keydown', () => {
+			if (this.steps == true) {
+				if (event.code == 'ArrowLeft' && this.direction != 'right') { // не может мгновенно переключиться слева на право и сверху вниз
+					this.direction = 'left';
+					this.steps = false;
+				}
+				else if (event.code == 'ArrowUp' && this.direction != 'down') {
+					this.direction = 'up';
+					this.steps = false;
+				}
+				else if (event.code == 'ArrowRight' && this.direction != 'left') {
+					this.direction = 'right';
+					this.steps = false;
+				}
+				else if (event.code == 'ArrowDown' && this.direction != 'up') {
+					this.direction = 'down';
+					this.steps = false;
+				}
 			}
-			else if (event.code == 'ArrowUp') {
-				this.direction = 'top';
+		});
+	},
+	playGame: function () {
+		document.addEventListener('keydown', () => {
+				if (event.code == 'Enter') { // не может мгновенно переключиться слева на право и сверху вниз
+					if (!this.playGameStart) { // флаг равен false то функция сработает, затем станет true - сработает один раз
+						this.interval();
+					}
+					this.playGameStart = true;
+				}
+		});
+		this.gameButton.addEventListener('click', () => {
+			if (!this.playGameStart) { // флаг равен false то функция сработает, затем станет true - сработает один раз
+				this.interval();
 			}
-			else if (event.code == 'ArrowRight') {
-				this.direction = 'right';
-			}
-			else if (event.code == 'ArrowDown') {
-			}
+			this.playGameStart = true;
+			console.log("hello PPPPP")
 		});
 	},
 	start: function () {
@@ -224,8 +317,8 @@ var SnakeGame = {
 		this.createSells();
 		this.createSnake();
 		this.createSnakeFood();
-		this.interval();
 		this.changeDirection();
+		this.playGame();
 	}
 };
 SnakeGame.start();
