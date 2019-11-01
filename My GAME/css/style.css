@@ -50,6 +50,7 @@ img {
 	width: 750px;
 	height: 600px;
 	display: none;
+	position: relative;
 }
 .snakeBody {
 	background-image: url(../img/snake_graphics_mini.png);
@@ -66,6 +67,10 @@ img {
 .snakeFood {
 	background-image: url(../img/snake_graphics_mini.png);
 	background-position: 136px 26px;
+}
+.snakeHeadTop {
+	background-image: url(../img/snake_graphics_mini.png);
+	background-position: 53px 108px;
 }
 .gameInfo {
 	width: 250px;
@@ -110,6 +115,46 @@ img {
 .gameButton:active {
 	box-shadow: 0px 0px 0px 5px rgba(255,255,0, 1) inset;
 }
+.modalWindow {
+	width: 300px;
+	height: 150px;
+	background: yellow;
+	top: 225px;
+	left: 225px;
+	position: absolute;
+	text-align: center;
+	box-shadow: 0px 8px 20px black;
+	animation-name: modal;
+	animation-duration: 1s; /* Продолжительность анимации */
+  animation-fill-mode: forwards;
+}
+.modalWindow h2 {
+	font-size: 16px;
+}
+#pressResult {
+	display: block;
+	margin: 20px auto 0;
+	width: 100px;
+	height: 40px;
+	text-transform: uppercase;
+  font: bold 16px 'Gamja Flower';
+}
+.descResults {
+	width: 200px;
+	background: pink;
+	margin: 0 auto;
+	height: 300px;
+	overflow-x: hidden;
+}
+.descResults span:first-child {
+	border-bottom: 1px solid black;
+}
+.descResults span {
+	display: block;
+	line-height: 30px;
+	color: #0F143C;
+	font-family: 'Gamja Flower';
+}
 
 @keyframes logo {
 	from {
@@ -146,5 +191,22 @@ img {
 	}
 	100% {
 		opacity: 1;
+	}
+}
+@keyframes modal {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes modalback {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+		display: none;
 	}
 }

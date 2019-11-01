@@ -6,6 +6,24 @@ var SnakeGame = {
 		letterK: null,
 		letterE: null
 	},
+	spriteSnake: {
+		headLeft: {
+			x: 53,
+			y: 80
+		},
+		headRight: {
+			x: 25,
+			y: 106
+		},
+		headTop: {
+			x: 53,
+			y: 108
+		},
+		headDown: {
+			x: 25,
+			y: 79
+		}
+	},
 	cell: null,
 	cells: null,
 	cellsSize: {
@@ -27,6 +45,7 @@ var SnakeGame = {
 	item: null,
 	createGameField: null,
 	createGameCells: null,
+	modalWindow: null,
 	interval: null,
 	changeDirection: null,
 	snakeBodyHead: null,
@@ -34,10 +53,16 @@ var SnakeGame = {
 	snakeBodyTail: null,
 	direction: 'right',
 	steps: false,
-	audio_eat: null,
+	audioEat: null,
 	scorePoint: 0,
 	playGame: null,
 	playGameStart: false,
+	stop: null,
+	stopMessage: null,
+	descResults: null,
+	tableScore: null,
+	tableScoreKeys: null,
+	tableScoreValues: null,
 	preload: function () {
 		// описание поля игры
 		this.createGame = document.querySelector('body');
@@ -75,7 +100,9 @@ var SnakeGame = {
 		this.preloadAnim();
 		//setTimeout(hidePreload, 4000);
 
-		// исчезновение заставки
+		// добавление аудио поедания яблока
+		this.audioEat = new Audio;
+		this.audioEat.src = 'audio/eat_sound.mp3';
 		
 		},
 		preloadDelay: function () {
@@ -102,9 +129,23 @@ var SnakeGame = {
 			this.gameButton.classList.add('gameButton');
 			this.playGame = document.querySelector('.gameButton');
 			this.playGame.innerText = 'Start';
-			console.log(this.playGame);
 
+			//доска с результатами
+			this.descResults = document.createElement('div');
+			this.descResults.classList.add('descResults');
+			this.gameInfo.appendChild(this.descResults);
+			this.tableScore = document.createElement('span');
+			this.tableScore.innerText = "Player - Result";
+			this.descResults.appendChild(this.tableScore);
 
+			//добавление результатов всех игроков
+			this.tableScoreKeys = Object.keys(localStorage);
+			this.tableScoreValues = Object.values(localStorage);
+			for (var i = 0; i < this.tableScoreKeys.length; i++) {
+				var scoreKey = document.createElement('span');
+				scoreKey.innerText = this.tableScoreKeys[i] + ' - ' + this.tableScoreValues[i];
+				this.descResults.appendChild(scoreKey);
+			}
 		},
 	preloadAnim: function () {
 		var item = document.getElementById('wrap_letters');
@@ -192,6 +233,7 @@ var SnakeGame = {
 
 		// возможное пересечения еды с телом змеи
 		while(this.food.classList.contains('snakeBody') || this.food.classList.contains('snakeBody') || this.food.classList.contains('snakeTail')) {
+			this.food.classList.remove('snakeFood');
 			this.createSnakeFood();
 		}
 		console.log(this.food);
@@ -229,6 +271,11 @@ var SnakeGame = {
 				this.snakeBody.unshift(document.querySelector('[posx = "' + snakeCoordinatesNow[0] + '"]' + '[posy = "' + this.cellsSize.y + '"]')); // появляется сначала левого поля
 			}
 		}
+		this.snakeBody[0].classList.add('snakeHead');
+		this.snakeBody[this.snakeBody.length - 1].classList.add('snakeTail');
+		for (var i = 1; i < this.snakeBody.length; i++) {
+			this.snakeBody[i].classList.add('snakeBody');
+		}
 
 		// встреча головы с едой
 		if (this.snakeBody[0].getAttribute('posx') == this.snakeFood[0] && this.snakeBody[0].getAttribute('posy') == this.snakeFood[1]) {
@@ -239,8 +286,9 @@ var SnakeGame = {
 			document.querySelector('.change').innerText = this.scorePoint;
 
 			// звук поедания
-			this.audio_eat = new Audio('../audio/eat_sound.mp3');
-			this.audio_eat.play();
+			this.clickSound();
+
+
 			// добавление элемента тела к змейке
 			var a = this.snakeBody[this.snakeBody.length - 1].getAttribute('posx');
 			var b = this.snakeBody[this.snakeBody.length - 1].getAttribute('posy');
@@ -252,15 +300,69 @@ var SnakeGame = {
 
 		// пересечение головы с телом
 		if (this.snakeBody[0].classList.contains('snakeBody')) {
-			//clearInterval(() => SnakeGame.interval());
-			console.log('STOP');
+			// остановка игры
+			clearInterval(this.stop);
+
+				//модальное окно
+				this.modalWindow = document.createElement('div');
+				this.modalWindow.classList.add('modalWindow');
+				this.createGameCells.appendChild(this.modalWindow);
+
+				var heading = document.createElement('h2');
+				heading.innerText = "Игра окончена. Введите ваши имя."
+				var namePlayer = document.createElement('input');
+				namePlayer.setAttribute('type','text');
+				namePlayer.setAttribute('id','user');
+				namePlayer.setAttribute('autofocus','');
+				var submit = document.createElement('input');
+				submit.setAttribute('type','button');
+				submit.setAttribute('id','pressResult');
+				submit.setAttribute('value','Press on me');
+
+				this.modalWindow.appendChild(heading);
+				this.modalWindow.appendChild(namePlayer);
+				this.modalWindow.appendChild(submit);
+
+				//отправка имени игрока в таблицу результатов
+				submit.addEventListener('click', () => {
+					var nameUser = document.getElementById('user').value;
+					localStorage.setItem(nameUser, this.scorePoint);
+					var score = localStorage.getItem(nameUser)
+					var user = document.createElement('span');
+					user.innerText = nameUser + ' - ' + score;
+					this.descResults.appendChild(user);
+					this.modalWindow.style.animationName = 'modalback';
+					this.modalWindow.style.animationDuration = '1s';
+
+					// удаление изображения старой змеи
+					var deleteOldSnake = document.querySelectorAll('.cell');
+					for (i = 0; i < deleteOldSnake.length; i++) {
+						deleteOldSnake[i].classList.remove('snakeBody'); 
+						deleteOldSnake[i].classList.remove('snakeHead'); 
+						deleteOldSnake[i].classList.remove('snakeTail');
+						deleteOldSnake[i].classList.remove('snakeFood');
+					}
+
+					// флаг false позволяет запустить игру заново
+					this.playGameStart = false;
+					// задает направление 
+					this.direction = 'right';
+					// обнуление координат змеи
+					this.snakeCoordinates = [];
+					this.snakeBody = [];
+					//обнуление счета
+					this.scorePoint = 0;
+					document.querySelector('.change').innerText = this.scorePoint;
+					// удаление модального окна
+					document.querySelector('.modalWindow').remove();
+					this.createSnake();
+					this.createSnakeFood();
+				});
+				
+				//this.interval();
+			//this.playGame();
 		}
 		
-		this.snakeBody[0].classList.add('snakeHead');
-		this.snakeBody[this.snakeBody.length - 1].classList.add('snakeTail');
-		for (var i = 1; i < this.snakeBody.length; i++) {
-			this.snakeBody[i].classList.add('snakeBody');
-		}
 
 		// направление
 		this.direction;
@@ -270,7 +372,7 @@ var SnakeGame = {
 
 	},
 	interval: function () {
-		setInterval(() => {this.moveRight();}, 200); // запуск функции через интервал
+		this.stop = setInterval(() => {this.moveRight();}, 200); // запуск функции через интервал
 	},
 	changeDirection: function () {
 		document.addEventListener('keydown', () => {
@@ -299,6 +401,7 @@ var SnakeGame = {
 				if (event.code == 'Enter') { // не может мгновенно переключиться слева на право и сверху вниз
 					if (!this.playGameStart) { // флаг равен false то функция сработает, затем станет true - сработает один раз
 						this.interval();
+						this.startAudio();
 					}
 					this.playGameStart = true;
 				}
@@ -306,11 +409,24 @@ var SnakeGame = {
 		this.gameButton.addEventListener('click', () => {
 			if (!this.playGameStart) { // флаг равен false то функция сработает, затем станет true - сработает один раз
 				this.interval();
+				this.startAudio();
+			console.log(this.audioEat);
 			}
 			this.playGameStart = true;
 			console.log("hello PPPPP")
 		});
 	},
+	startAudio: function () {
+		this.clickSoundInit()
+	},
+	clickSoundInit: function () { // доступ к добавлению звука
+    this.audioEat.play(); // запускаем звук
+    this.audioEat.pause(); // и сразу останавливаем
+  },
+  clickSound: function() {
+    this.audioEat.currentTime = 0; // в секундах, перемотка на начало
+    this.audioEat.play();
+  },
 	start: function () {
 		this.preload();
 		this.preloadDelay();
