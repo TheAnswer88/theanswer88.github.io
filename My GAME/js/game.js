@@ -6,24 +6,6 @@ var SnakeGame = {
 		letterK: null,
 		letterE: null
 	},
-	spriteSnake: {
-		headLeft: {
-			x: 53,
-			y: 80
-		},
-		headRight: {
-			x: 25,
-			y: 106
-		},
-		headTop: {
-			x: 53,
-			y: 108
-		},
-		headDown: {
-			x: 25,
-			y: 79
-		}
-	},
 	cell: null,
 	cells: null,
 	cellsSize: {
@@ -98,7 +80,6 @@ var SnakeGame = {
 
 		// запуск анимации букв
 		this.preloadAnim();
-		//setTimeout(hidePreload, 4000);
 
 		// добавление аудио поедания яблока
 		this.audioEat = new Audio;
@@ -178,6 +159,7 @@ var SnakeGame = {
 
 
 
+
 	},
 	appearCell: function() {
 		for (i = 0; i < 720; i++) {
@@ -185,8 +167,6 @@ var SnakeGame = {
 				this.createGameCells.appendChild(this.cell); // помещаем в него ячейку
 				this.cell.classList.add('cell'); 
 			}
-			//this.createGameCells.style.display = 'flex';
-			//this.createGameCells.style.flexWrap = 'wrap';
 
 			this.cells = document.getElementsByClassName('cell');
 			for (var j = 0; j < this.cells.length; j++) {
@@ -271,6 +251,7 @@ var SnakeGame = {
 				this.snakeBody.unshift(document.querySelector('[posx = "' + snakeCoordinatesNow[0] + '"]' + '[posy = "' + this.cellsSize.y + '"]')); // появляется сначала левого поля
 			}
 		}
+
 		this.snakeBody[0].classList.add('snakeHead');
 		this.snakeBody[this.snakeBody.length - 1].classList.add('snakeTail');
 		for (var i = 1; i < this.snakeBody.length; i++) {
@@ -281,6 +262,7 @@ var SnakeGame = {
 		if (this.snakeBody[0].getAttribute('posx') == this.snakeFood[0] && this.snakeBody[0].getAttribute('posy') == this.snakeFood[1]) {
 			this.food.classList.remove('snakeFood');
 
+
 			// наращивание счета
 			this.scorePoint++;
 			document.querySelector('.change').innerText = this.scorePoint;
@@ -288,7 +270,7 @@ var SnakeGame = {
 			// звук поедания
 			this.clickSound();
 
-
+			
 			// добавление элемента тела к змейке
 			var a = this.snakeBody[this.snakeBody.length - 1].getAttribute('posx');
 			var b = this.snakeBody[this.snakeBody.length - 1].getAttribute('posy');
@@ -358,12 +340,8 @@ var SnakeGame = {
 					this.createSnake();
 					this.createSnakeFood();
 				});
-				
-				//this.interval();
-			//this.playGame();
 		}
 		
-
 		// направление
 		this.direction;
 
@@ -373,6 +351,7 @@ var SnakeGame = {
 	},
 	interval: function () {
 		this.stop = setInterval(() => {this.moveRight();}, 200); // запуск функции через интервал
+
 	},
 	changeDirection: function () {
 		document.addEventListener('keydown', () => {
@@ -438,28 +417,3 @@ var SnakeGame = {
 	}
 };
 SnakeGame.start();
-
-
-
-
-
-/*
-var elem = document.getElementById('wrap');
-var letters = [];
-var sel;
-for (var i = 0; i < elem.children.length; i++) {
-	letters.push(elem.children[i]);
-}
-
-function generate() {
-	sel = Math.floor(Math.random() * letters.length);
-	setTimeout(animate, (Math.random() * 500) + 100)
-}
-function animate() {
-	letters[sel].classList.add('anim');
-	letters.splice(sel, 1);
-	if (letters.length > 0) {
-		generate();
-	}
-}
-generate();*/

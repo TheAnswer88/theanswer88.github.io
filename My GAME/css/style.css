@@ -53,16 +53,17 @@ img {
 	position: relative;
 }
 .snakeBody {
-	background-image: url(../img/snake_graphics_mini.png);
-	background-position: 107px 107px;
+	background-image: url(../img/circle.svg);
+	/*background-position: 107px 107px;*/
 }
 .snakeHead {
-	background-image: url(../img/snake_graphics_mini.png);
-	background-position: 25px 106px;
+	background-image: url(../img/smile.svg);
+	background-size: cover;
+	/*background-position: 25px 106px;*/
 }
 .snakeTail {
-	background-image: url(../img/snake_graphics_mini.png);
-	background-position: 25px 52px;
+	background-image: url(../img/circleTail.svg);
+	/*background-position: 25px 52px;*/
 }
 .snakeFood {
 	background-image: url(../img/snake_graphics_mini.png);
@@ -155,7 +156,6 @@ img {
 	color: #0F143C;
 	font-family: 'Gamja Flower';
 }
-
 @keyframes logo {
 	from {
 		opacity: 0;
