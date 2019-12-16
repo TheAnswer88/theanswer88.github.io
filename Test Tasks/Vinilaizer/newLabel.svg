@@ -1,0 +1,16 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<!-- d='M0 50 C 0 116, 100 116, 100 50'-->
+
+<svg width='100' height='100'
+        xmlns='http://www.w3.org/2000/svg'
+        xmlns:xlink='http://www.w3.org/1999/xlink'>
+
+    <path id='PPP1' d='M 25, 50
+        a 25,25 0 1,1 50,0
+        a 25,25 0 1,1 -50,0' stroke='none' fill='none' />
+
+    <text fill='white'>
+        <textPath font-size = "5" textLength="100" lengthAdjust="spacing" xlink:href='#PPP1'>ACDC - sgsfrgrsf1988</textPath>
+    </text>
+
+</svg>
